@@ -10,15 +10,15 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-// MongoDB Verbindung
+// MongoDB connection
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Datenbank verbunden'))
-  .catch(err => console.error('Datenbank Verbindungsfehler:', err));
+  .then(() => console.log('Database connected'))
+  .catch(err => console.error('Database connection error:', err));
 
 app.get('/', (req, res) => {
-  res.send('API läuft');
+  res.send('API is running');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server läuft auf Port: ${PORT}`);
+  console.log(`Server running on port: ${PORT}`);
 });
